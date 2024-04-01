@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Flex</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+        #main_cont{
+            width: 100%;
+            height: 20rem;
+            /* border: 1px solid red; */
+            display: flex;
+            border-radius: 10 px;
+            background-color: rgb(247,247,255);
+        }
+        #main_cont>div{
+            border: 1px solid black;
+            width: 15rem;
+            height: 10rem;
+            margin-top: 5rem;
+            margin-left: 1.5rem;
+            border-radius: 10px;
+        }
+        @media screen and (min-width: 320px) and (max-width:480px) {
+            #main_cont{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                /* flex-wrap: wrap; */
+                margin-right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Hiring Facts</h1>
+    <div id="main_cont">
+        <div style="background-color: aqua;">
+            <i class="fa-solid fa-file"></i>
+            <h4 style="background-color: aqua;text-align: center;">Hiring Process</h4>
+            <span style="font-size: 1.5rem;color: blue;padding-left: 30%;"> < 3days</span>
+        </div>
+        <div style="background-color: blueviolet;">
+            <i class="fa-solid fa-file"></i>
+            <h4 style="background-color:blueviolet;text-align: center;">Offer Acceptence</h4>
+            <span style="font-size: 1.5rem;color: blue;padding-left: 30%;"> < 90%</span>
+        </div>
+        <div style="background-color: tomato;">
+            <i class="fa-solid fa-file"></i>
+            <h4 style="text-align: center;">Retantion Rate</h4>
+            <span style="font-size: 1.5rem;color: blue;padding-left: 30%;"> < 93%</span>
+        </div>
+        <div style="background-color: blueviolet;">
+            <i class="fa-solid fa-file"></i>
+            <h4 style="background-color:blueviolet;text-align: center;">Hiring parteners</h4>
+            <span style="font-size: 1.5rem;color: blue;padding-left: 30%;"> < 4000+</span>
+        </div>
+        <div style="background-color: rgb(43, 226, 156);">
+            <i class="fa-solid fa-file"></i>
+            <h4 style="text-align: center;">Year Round Available</h4>
+            <span style="font-size: 1.5rem;color: blue;padding-left: 30%;"> < 50+</span>
+        </div>
+    </div>
+</body>
+</html>
