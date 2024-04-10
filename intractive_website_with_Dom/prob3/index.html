@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+         border: 2px solid black;
+         width: 40%;
+         height: 300px;
+         align-items: center;
+         justify-content: center;
+         margin: auto;
+         display: flex;
+         flex-direction: column;
+    }
+    #inp1{
+        width: 200px;
+        height: 30px;
+        color: black;
+        margin-bottom: 10px;
+    }
+    #inp2{
+        width: 200px;
+        height: 30px;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <form id="container" action="">
+        <h1 id="output">Display</h1>
+        <input id="inp1" type="number" placeholder="Enter Your Weight Here in KG">
+        <br>
+        <input id="inp2" type="number" placeholder="Enter Your hight Here in cm">
+        <br>
+        <input  type="submit" style="margin-top: 10px;" placeholder="Calculate BMI" name="" id="submit">
+        </form>
+    
+</body>
+</html>
+<script>
+    let h1tag=document.getElementById('output')
+    let input1=document.getElementById('inp1')
+    let input2=document.getElementById('inp2')
+    let submit=document.getElementById('submit')
+    submit.addEventListener('click',function(e){
+        // (weight) / (height * height)
+        e.preventDefault()
+        let weight = parseFloat(input1.value);
+        let height = parseFloat(input2.value) / 100; // converting cm to meters
+        let output = weight / (height * height);
+        h1tag.innerText=("BMI ;",output)//`BMI: ${output.toFixed(2)}`;
+    })
+    
+
+</script>

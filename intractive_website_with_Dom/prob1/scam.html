@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        #cont{
+            width: 50%;
+            height: 400px;
+            border: 2px solid red;
+            justify-content: space-around;
+            padding-top: 20px;
+            margin: auto;
+        }
+        #main{
+            width: 55%;
+            height: 50px;
+            display: flex;
+            border: 2px solid red;
+            justify-content: space-around;
+            padding-top: 20px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+  <div id="cont">
+    <h1 id="ans" style="text-align: center;">Answer</h1>
+    <div id="main">
+        <div class=""><input type="text" placeholder="Enter 1st Number" name="" id="inp1"></div>
+        <div class=""><input type="text" placeholder="Enter 2nd Number" name="" id="inp2"></div>
+    </div>
+   <div style="margin-top: 20px;justify-content: center;align-items: center;">
+        <button onclick="calculate('add')">Add</button>
+        <button onclick="calculate('multiply')">Multiply</button>
+        <button onclick="calculate('subtract')">Subtract</button>
+        <button onclick="calculate('divide')">Division</button>
+   </div>
+  </div>
+</body>
+</html>
+<script>
+    function calculate(operation) {
+        let inp1 = parseFloat(document.getElementById("inp1").value);
+        let inp2 = parseFloat(document.getElementById("inp2").value);
+        let result;
+        switch(operation) {
+            case 'add':
+                result = add(inp1, inp2);
+                break;
+            case 'multiply':
+                result = multiply(inp1, inp2);
+                break;
+            case 'subtract':
+                result = subtract(inp1, inp2);
+                break;
+            case 'divide':
+                result = divide(inp1, inp2);
+                break;
+            default:
+                result = "Invalid operation";
+        }
+        document.getElementById("ans").innerHTML =   result;
+    }
+    
+    function add(a, b) {
+        return a + b;
+    }
+    
+    function multiply(a, b) {
+        return a * b;
+    }
+    
+    function subtract(a, b) {
+        return a - b;
+    }
+    
+    function divide(a, b) {
+        if(b === 0) {
+            return "Cannot divide by zero";
+        }
+        return a / b;
+    }
+</script>
