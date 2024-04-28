@@ -1,12 +1,12 @@
 let store;
 async function fetchData(){
-    const res=await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees")
+    const res=await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=1&limit=10")
     // const res=await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=1&limit=10&filterBy=gender&filterValue=female&sort=salary&order=asc")
     const finalres=await res.json()
     // console.log(finalres.data)
     store=finalres.data
     console.log(store)
-    // showData(finalres.data)
+    showData(finalres.data)
 }
 
 let table=document.getElementById("table1")
@@ -47,7 +47,7 @@ select2.addEventListener("change",function(event){
    showData(ans)
    
 })
-fetchData()
+// fetchData()
 // 
 
 
@@ -81,4 +81,34 @@ salarysort.addEventListener("change",function(event){
     })
     
    showData(ans)
+})
+
+// creating my paggination part
+
+let next=document.getElementById("btn2")
+let prev=document.getElementById("btn1")
+let count=1
+next.addEventListener("click",function(){
+    console.log("next butn click")
+    if(count>=store.length){
+        next.disabled=true
+    }
+    else{
+        count++
+        prev.disabled=false
+    }
+    fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${count}&limit=10`)
+})
+
+prev.addEventListener("click",function(){
+    if(count<=1){
+        prev.disabled=true
+
+    }
+    else{
+        count--
+
+    }
+    fetchData(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${count}&limit=10`)
+    
 })
