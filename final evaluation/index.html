@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final evaluation</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="cont">
+        <h1 style="text-align: center;">Employ managment system</h1>
+        
+
+        
+        <!-- // am filtering data based on department -->
+        <label for="">Sort by department:
+            <select name="" id="sortbydepartment">
+                <option value="">--default option--</option>
+                <option value="operations">operations</option>
+                <option value="finance"> finance</option>
+                <option value="marketing"> marketing</option>
+                <option value="engineering"> engineering</option>
+            </select>
+        </label>
+        <!-- // am filtering data based on gender -->
+        <label for="">Sort by gender:
+            <select name="" id="sortbygender">
+                <option value="">--default option--</option>
+                <option value="male">Male</option>
+                <option value="female"> female</option>
+            </select>
+        </label>
+        <!-- // am filtering data based on salary -->
+        <label for="">Sort by salary:
+            <select name="" id="sortbysalary">
+                <option value="">--default option--</option>
+                <option value="asc">low to high</option>
+                <option value="desc"> high to low</option>
+            </select>
+        </label>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>sn no</th>
+                <th style="padding-right: 50px;padding-left: 50px;">Name</th>
+                <th style="padding-left: 30px;">Gender</th>
+                <th>Department </th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+    </table>
+
+    <table id="table1"></table>
+
+    <button id="btn1">prev</button>
+    <button id="btn2">next</button>
+</body>
+</html>
+<script src="./index.js"></script>
